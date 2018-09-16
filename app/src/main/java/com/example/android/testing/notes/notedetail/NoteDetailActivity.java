@@ -18,6 +18,7 @@ package com.example.android.testing.notes.notedetail;
 
 import com.example.android.testing.notes.R;
 import com.example.android.testing.notes.util.EspressoIdlingResource;
+import com.microsoft.appcenter.analytics.Analytics;
 
 import android.os.Bundle;
 import android.support.annotation.VisibleForTesting;
@@ -53,6 +54,10 @@ public class NoteDetailActivity extends AppCompatActivity {
         String noteId = getIntent().getStringExtra(EXTRA_NOTE_ID);
 
         initFragment(NoteDetailFragment.newInstance(noteId));
+
+
+        //TODO: Parte 6 - Adicionando Track Event
+        Analytics.trackEvent("NoteDetailActivity");
     }
 
     @Override

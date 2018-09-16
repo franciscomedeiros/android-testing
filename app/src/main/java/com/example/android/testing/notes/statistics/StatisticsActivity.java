@@ -17,6 +17,7 @@
 package com.example.android.testing.notes.statistics;
 
 import com.example.android.testing.notes.R;
+import com.microsoft.appcenter.analytics.Analytics;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -41,6 +42,10 @@ public class StatisticsActivity extends AppCompatActivity {
         ab.setTitle(R.string.statistics_title);
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setDisplayShowHomeEnabled(true);
+
+
+        //TODO: Parte 6 - Adicionando Track Event
+        Analytics.trackEvent("StatisticsActivity");
     }
 
     @Override

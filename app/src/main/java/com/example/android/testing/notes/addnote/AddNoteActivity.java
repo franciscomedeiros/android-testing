@@ -18,6 +18,7 @@ package com.example.android.testing.notes.addnote;
 
 import com.example.android.testing.notes.R;
 import com.example.android.testing.notes.util.EspressoIdlingResource;
+import com.microsoft.appcenter.analytics.Analytics;
 
 import android.os.Bundle;
 import android.support.annotation.VisibleForTesting;
@@ -50,6 +51,9 @@ public class AddNoteActivity extends AppCompatActivity {
         if (null == savedInstanceState) {
             initFragment(AddNoteFragment.newInstance());
         }
+
+        //TODO: Parte 6 - Adicionando Track Event
+        Analytics.trackEvent("AddNoteActivity");
     }
 
     @Override

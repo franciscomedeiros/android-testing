@@ -70,6 +70,9 @@ public class NotesActivity extends AppCompatActivity {
         if (null == savedInstanceState) {
             initFragment(NotesFragment.newInstance());
         }
+
+        //TODO: Parte 6 - Adicionando Track Event
+        Analytics.trackEvent("NotesActivity");
     }
 
     private void initFragment(Fragment notesFragment) {

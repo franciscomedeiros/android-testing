@@ -19,12 +19,15 @@ package com.example.android.testing.notes.addnote;
 import com.example.android.testing.notes.data.Note;
 import com.example.android.testing.notes.data.NotesRepository;
 import com.example.android.testing.notes.util.ImageFile;
+import com.microsoft.appcenter.analytics.Analytics;
 
 import android.support.annotation.NonNull;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -62,6 +65,13 @@ public class AddNotePresenter implements AddNoteContract.UserActionsListener {
             mNotesRepository.saveNote(newNote);
             mAddNoteView.showNotesList();
         }
+
+        //TODO: Parte 6 - Adicionando Track Event
+        Map<String, String> properties = new HashMap<>();
+        properties.put("Title", title);
+        properties.put("Description", description);
+
+        Analytics.trackEvent("AddedNote", properties);
     }
 
     @Override
