@@ -46,7 +46,6 @@ public class NotesServiceApiImpl implements NotesServiceApi {
 
     @Override
     public void getNote(final String noteId, final NotesServiceCallback callback) {
-        //TODO: Add network latency here too.
         Note note = NOTES_SERVICE_DATA.get(noteId);
         callback.onLoaded(note);
     }

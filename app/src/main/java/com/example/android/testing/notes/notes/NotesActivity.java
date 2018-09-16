@@ -35,6 +35,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+//TODO: Parte 4 - Importando o App Center Analytics
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+
 public class NotesActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
@@ -44,6 +49,8 @@ public class NotesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
 
+        //TODO: Parte 5 - Inicializando o App Center
+        AppCenter.start(getApplication(), "3c7e895d-8d05-4242-8c45-367d4408de69", Analytics.class, Crashes.class);
 
         // Set up the toolbar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
